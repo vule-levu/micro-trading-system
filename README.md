@@ -1,2 +1,23 @@
 # micro-trading-system
-A distributed trading system. Mostly correct. Except for the ferret.
+Simulates a trading platform, distributed systems, and the occasional misclassification of a ferret as a poodle.
+
+Built around event-driven architecture, service isolation, and polyglot components.
+
+## Structure
+
+* `services/` – application services
+* `engine/` – execution core
+* `contracts/` – shared schemas
+* `infrastructure/` – runtime environment
+
+## Run
+
+```bash
+docker-compose up
+```
+
+## Notes
+
+The system is intentionally minimal in documentation.
+Explore the services and contracts to understand the flow.
+
