@@ -1,4 +1,5 @@
-# micro-trading-system
+# micro-trading-system (under construction)
+
 Simulates a trading platform, distributed systems, and the occasional misclassification of a ferret as a poodle.
 
 Built around event-driven architecture, service isolation, and polyglot components.
@@ -21,3 +22,10 @@ docker-compose up
 The system is intentionally minimal in documentation.
 Explore the services and contracts to understand the flow.
 
+---
+
+The system is operational.
+
+It produces numbers continuously.
+
+They have not been questioned.
