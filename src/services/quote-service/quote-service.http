@@ -1,4 +1,4 @@
-@quote_service_HostAddress = http://localhost:5050
+@quote_service_HostAddress = http://localhost:5290
 
 GET {{quote_service_HostAddress}}/weatherforecast/
 Accept: application/json
