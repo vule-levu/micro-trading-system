@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "market-processor", "src\ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quote-service", "src\services\quote-service\quote-service.csproj", "{9316E1AE-396B-4A0A-81F8-990BE5915E7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "order-service", "src\services\order-service\order-service.csproj", "{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,18 @@ Global
 		{9316E1AE-396B-4A0A-81F8-990BE5915E7F}.Release|x64.Build.0 = Release|Any CPU
 		{9316E1AE-396B-4A0A-81F8-990BE5915E7F}.Release|x86.ActiveCfg = Release|Any CPU
 		{9316E1AE-396B-4A0A-81F8-990BE5915E7F}.Release|x86.Build.0 = Release|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Debug|x64.Build.0 = Debug|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Debug|x86.Build.0 = Debug|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Release|x64.ActiveCfg = Release|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Release|x64.Build.0 = Release|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Release|x86.ActiveCfg = Release|Any CPU
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +82,6 @@ Global
 		{F49BC2E6-0977-4F61-A8B6-177987A85300} = {984BB9B3-3FA3-BE33-9484-CAC21695A33C}
 		{BB603EE0-6F53-48F2-953D-D8975CAD49CE} = {984BB9B3-3FA3-BE33-9484-CAC21695A33C}
 		{9316E1AE-396B-4A0A-81F8-990BE5915E7F} = {984BB9B3-3FA3-BE33-9484-CAC21695A33C}
+		{F1A72AEB-8EBF-4B11-AD37-A2D55926E663} = {984BB9B3-3FA3-BE33-9484-CAC21695A33C}
 	EndGlobalSection
 EndGlobal
