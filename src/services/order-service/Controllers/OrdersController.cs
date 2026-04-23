@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
+using StackExchange.Redis;
 using System.Diagnostics;
 
 namespace order_service.Controllers;
@@ -10,8 +11,14 @@ public class OrdersController : ControllerBase
 {
     private static readonly List<Order> Orders = new();
     private static readonly List<Trade> Trades = new();
+    private readonly IDatabase _db;
+    public OrdersController(IConnectionMultiplexer redis)
+    {
+        _db = redis.GetDatabase();
+    }
+
     [HttpPost]
-    public IActionResult PlaceOrder([FromBody] Order order)
+    public async Task<IActionResult> PlaceOrder([FromBody] Order order)
     {
         if (string.IsNullOrWhiteSpace(order.Symbol) ||
         string.IsNullOrWhiteSpace(order.Side) ||
@@ -21,15 +28,28 @@ public class OrdersController : ControllerBase
         }
 
         order.Id = Guid.NewGuid().ToString();
+        var key = $"quote:{order.Symbol.ToUpper()}";
+        
+        var value = await _db.StringGetAsync(key);
+
+        if (value.IsNullOrEmpty)
+        {
+            return BadRequest($"No market data for {order.Symbol}");
+        }
+
+        if (!double.TryParse(value, out var marketPrice))
+        {
+            return StatusCode(500, "Invalid market data");
+        }
 
         order.Status = "FILLED";
-        order.ExecutedPrice = order.Price;
+        order.ExecutedPrice = marketPrice;
 
         var trade = new Trade
         {
             OrderId = order.Id,
             Symbol = order.Symbol,
-            Price = order.Price,
+            Price = order.ExecutedPrice,
             Quantity = order.Quantity,
             Timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()
         };
